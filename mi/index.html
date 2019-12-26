@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>小米官网</title>
+		<style type="text/css">
+
+		</style>
+		
+		<!-- 引入css样式文件 -->
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/iconfont/iconfont.css">
+	</head>
+	<body>
+		<!-- header start -->
+		<div id="header">
+			<div id="h_main">
+				<div class="h_m_left">
+					<ul>
+						<li><a href="#">小米商城</a><span>|</span></li>
+						<li><a href="#"> MIUI </a><span>|</span></li>
+						<li><a href="#"> IoT </a><span>|</span></li>
+						<li><a href="#">云服务</a><span>|</span></li>
+						<li><a href="#"> 金融 </a><span>|</span></li>
+						<li><a href="#"> 有品</a><span>|</span></li>
+						<li><a href="#">小爱开放平台</a><span>|</span></li>
+						<li><a href="#">企业团购</a><span>|</span></li>
+						<li><a href="#">直播</a><span>|</span></li>
+						<li><a href="#">资质证照</a><span>|</span></li>
+						<li><a href="#">协议规则</a></li>
+					</ul>
+				</div>
+				<div class="h_m_right">
+					<div class="h_m_r_login">
+						<a href="#">登录</a><span>|</span><a href="#">注册</a>
+					</div>
+					<div class="h_m_r_message">
+						<a href="#">消息通知</a>
+					</div>
+					
+					<div class="h_m_r_ordericon">
+						<!-- 这里必须使用iconfont修饰一下外链样式 -->
+						<span class="iconfont">&#xe634;</span>
+						<span class="car">购物车（<span id="num">0</span>）</span>
+						<div class="h_m_r_ordericon_hide">
+							<a>购物车中还没有商品，赶紧选购吧！</a>
+						</div>
+					</div>
+					
+				
+				</div>
+			</div>
+		</div>
+		<!-- header end -->
+		
+		<style type="text/css">
+			/* position对该div相对于父级n_s_input进行定位 top 0 left 0*/
+			#n_s_input .n_s_hide{width: 244px; height: 300px;background: #fff;border: 1px solid #f60; border-top: none;
+			position: absolute;top: 55px;left: 0px; display: none;}
+			#n_s_input .n_s_hide li{height: 30px;line-height: 30px;}
+			#n_s_input .n_s_hide li:hover{background: #eee;}
+			
+			/* padding-left 距离左边16像素 */
+			#n_s_input .n_s_hide li a{padding-left: 16px; display: block; color: #333;}
+			#n_s_input .n_s_hide li a span{padding-right: 16px;float: right; display: block; color: #bbb;}
+		</style>
+		
+		<!-- nav_wrep start -->
+		<div id="nav_wrep">
+			<div id="nav">
+				<div class="logo">
+					<a href="#"></a>
+				</div>
+				<div id="nav_main">
+					<ul>		
+						<li><a href="#">小米手机</a></li>
+						<li><a href="#">Redmi 红米</a></li>
+						<li><a href="#">电视</a></li>
+						<li><a href="#">笔记本</a></li>
+						<li><a href="#">家电</a></li>
+						<li><a href="#">路由器</a></li>
+						<li><a href="#">智能硬件</a></li>
+						<li><a href="#">服务</a></li>
+						<li><a href="#">社区</a></li>
+					</ul>
+				</div>
+				<div id="nav_search">
+					<div id="n_s_input">
+						<input type="text" />
+						<div class="n_s_hide">
+							<ul>
+								<li><a href="">小米小爱触屏音箱<span>约剩余9件</span></a></li>
+								<li><a href="">小米小爱蓝牙音箱随身版<span>约剩余10件</span></a></li>
+								<li><a href="">小米插线板5孔位<span>约剩余13件</span></a></li>
+								<li><a href="">Redmi充电宝<span>约剩余2件</span></a></li>
+								<li><a href="">小米真无线蓝牙耳机 Air2<span>约剩余6件</span></a></li>
+								<li><a href="">Air 13.3" 2019款<span>约剩余3件</span></a></li>
+								<li><a href="">小米全面屏电视E55A<span>约剩余6件</span></a></li>
+								<li><a href="">Redmi全自动波轮洗衣机<span>约剩余7件</span></a></li>
+								<li><a href="">小米电视4A 32英寸<span>约剩余1件</span></a></li>
+								<li><a href="">米家互联网空调<span>约剩余7件</span></a></li>
+							</ul>
+						</div>
+					</div>
+					<div id="n_s_findall">
+						<span class="iconfont">&#xe718;</span>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<!-- nav_wrep end -->
+		<!-- 引入js文件 -->
+		<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+		<!-- <script type="text/javascript" src="js/index.js"></script> -->
+		<script type="text/javascript">
+			(function(){
+				var $ordericon = $("#h_main .h_m_right .h_m_r_ordericon");
+				var $hide = $("#h_main .h_m_right .h_m_r_ordericon .h_m_r_ordericon_hide");
+				// jquery.hove方法第一个func代表鼠标移入操作，第二个func代表鼠标移出操作
+				// display block代表显示 none代表隐藏
+				$ordericon.hover(function(){
+					$hide.stop(true).slideDown();
+				},function(){
+					$hide.stop(true).slideUp();
+				});
+				
+				var $search = $("#nav_search");
+				var $input = $("#n_s_input input");
+				var $n_s_hide = $("#n_s_input .n_s_hide")
+				$input.focus(function(){
+					$search.addClass("focus");
+					$n_s_hide.show();
+				}).blur(function(){
+					$search.removeClass("focus");
+					$n_s_hide.hide();
+				});
+			})();
+		</script> 
+	</body>
+</html>

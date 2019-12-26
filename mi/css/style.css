@@ -1,0 +1,79 @@
+@charset "utf-8";
+/* herder start */
+/* div容器边距设置为0 解决浏览器不兼容问题*/
+*{margin: 0;padding: 0;} 
+/* 清除ul，li中的style */
+ul,li{list-style: none;}
+body{font-size: 12px;font-family: "microsoft yahei";}
+/* 清除a标签中的默认下划线效果 */
+a{text-decoration: none;}
+#header{width: 100%;height: 40px;background: #424242;;min-width: 1226px;}
+/* auto自动居中 */
+#h_main{width: 1226px;height: 40px; background: #424242;;margin: 0 auto;}
+/* float: left;左浮动，该div标签排列在左边 */
+#h_main .h_m_left{
+/* line-height设置此div容器中的行高使字体居中于容器 */
+width: 700px; height: 40px; background: #424242;; float: left;line-height: 40px;}
+#h_main .h_m_right{width: 300px; height: 40px; background: #424242; float: right;}
+#h_main .h_m_left li{float: left;}
+#h_main .h_m_left li a{color: #b0b0b0;}
+/* margin设置外边距 垂直0 水平9px opacity设置透明度*/
+#h_main .h_m_left li span{color: #B0B0B0; opacity: 0.1; margin: 0 9px;}
+/* hover伪类事件，当鼠标移动到对应元素显示设置效果 */
+#h_main .h_m_left li a:hover{color: #fff;}
+#h_main .h_m_right .h_m_r_login{width: 90;height: 40px; background: #424242; line-height: 40px; float: left;}
+
+#h_main .h_m_right .h_m_r_login a{color: #b0b0b0;margin: 0 9px;}
+#h_main .h_m_right .h_m_r_login a:hover{color: #fff;}
+#h_main .h_m_right .h_m_r_login span{color: #B0B0B0;opacity: 0.1;}
+#h_main .h_m_right .h_m_r_message{width: 70px; height: 40px; background: #424242; line-height: 40px; float: left;}
+#h_main .h_m_right .h_m_r_message a{color: #b0b0b0; margin: 0 9px;}
+#h_main .h_m_right .h_m_r_message a:hover{color: #fff;}
+/* line-height设置行高和容器同步使字体在容器居中 text-align 设置容器中字节水平居中 */
+#h_main .h_m_right .h_m_r_ordericon{
+	width: 140px;height: 40px; background: #B0B0B0; float: left;line-height: 40px; text-align: center;
+	/* position定位绑定到该div容器上 cursor:pointer鼠标移动上去变成小手指默认是箭头 z-index: 10 将元素层级设置为最高*/
+	position: relative;cursor: pointer; z-index: 10;
+	}
+
+#h_main .h_m_right .h_m_r_ordericon .h_m_r_ordericon_hide{
+	/* box-shadow设置盒子偏移阴影特性  position定位*/
+	width: 300px;height: 100px; background: #fff; box-shadow: 0 2px 2px rgba(0,0,100,0.2); position: absolute;
+	/* top距离上边边距，right距离右边定位div容器边距为0 display:none默认隐藏 */
+	top: 40; right: 0px; line-height: 100px;cursor: default; display: none;
+}
+#h_main .h_m_right .h_m_r_ordericon:hover{background: #fff;}
+#h_main .h_m_right .h_m_r_ordericon:hover .iconfont{color: #f60;}
+#h_main .h_m_right .h_m_r_ordericon:hover .car{color: #f60;}
+/* header end */
+
+/* nav_wrep start */
+/* margin 设置div直接边距 第一个值代表上下，第二个代表自动水平调整 */
+#nav_wrep{width: 100%;height: 55px; margin: 23px auto;}
+#nav{width: 1226px;height: 55px; margin: 0 auto;}
+/* display:block将a标签元素升级为可显示元素 */
+#nav .logo a{width: 55px;height: 55px; display: block; background:url(../img/mi.png) #f60 center; float: left;}
+/* margin-left距离左边div盒子距200px  line-height设置行高*/
+#nav_main{width: 630px; height: 55px;float: left; margin-left: 200px;line-height: 55px;}
+#nav_main li{float: left;color: #333;font-size: 16px;line-height: 55px;color: #333;}
+/* padding 给a元素增加内边距,实现点击感应范围增大效果 */
+#nav_main li a{padding: 15px 8px;color: #333;}
+#nav_main li a:hover{color: #f60;}
+#nav_search{width: 300px;height: 55px;float: right; margin-right: 3px;}
+/* 添加鼠标感知 */
+#nav_search:hover #n_s_input input{border-color: #bbb;}
+#nav_search:hover #n_s_findall{border-color: #bbb;}
+#nav_search.focus #n_s_input input{border-color: #f60;}
+#nav_search.focus #n_s_findall{border-color: #f60;}
+#n_s_input{width: 245px;height: 55px; float: left; position: relative;}
+/* border添加边框 1px宽度 border-right=0右边框为0 text-indent设置文本缩进*/
+/* transition 在0.3s内进行颜色过渡 outline去掉边框默认特效*/
+#n_s_input input{width: 244px; height: 53px; outline: none; border: 1px solid #e0e0e0;border-right: 0px; 
+text-indent: 10px; font-size: 12px; font-family: "microsoft yahei"; transition: 0.2s;}
+/* cursor:pointer鼠标移动到上面出现小手 */
+#n_s_findall{width: 53px;height: 53px; outline: none; float: left; border: 1px solid #e0e0e0; text-align: center;line-height: 53px;
+cursor: pointer; transition: 0.2s;}
+#n_s_findall:hover{border : 1px none #f60; width: 55px; height: 55px; background: #f60; color: #fff;}
+#n_s_findall:hover .iconfont{color: #fff;}
+#n_s_findall .iconfont{color: #616161; font-size: 24px;}
+/* nav_wrep end */

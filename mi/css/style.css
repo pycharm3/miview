@@ -63,8 +63,10 @@ width: 700px; height: 40px; background: #424242;; float: left;line-height: 40px;
 /* 添加鼠标感知 */
 #nav_search:hover #n_s_input input{border-color: #bbb;}
 #nav_search:hover #n_s_findall{border-color: #bbb;}
+/* 当输入框获得焦点时，改变它的背景色：*/
 #nav_search.focus #n_s_input input{border-color: #f60;}
 #nav_search.focus #n_s_findall{border-color: #f60;}
+
 #n_s_input{width: 245px;height: 55px; float: left; position: relative;}
 /* border添加边框 1px宽度 border-right=0右边框为0 text-indent设置文本缩进*/
 /* transition 在0.3s内进行颜色过渡 outline去掉边框默认特效*/

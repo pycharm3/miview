@@ -89,8 +89,8 @@
 						<input type="text" />
 						<div class="n_s_hide">
 							<ul>
-								<li><a href="">小米小爱触屏音箱<span>约剩余9件</span></a></li>
-								<li><a href="">小米小爱蓝牙音箱随身版<span>约剩余10件</span></a></li>
+								<li><a href="https://www.baidu.com">小米小爱触屏音箱<span>约剩余9件</span></a></li>
+								<li><a href="https://www.baidu.com">小米小爱蓝牙音箱随身版<span>约剩余10件</span></a></li>
 								<li><a href="">小米插线板5孔位<span>约剩余13件</span></a></li>
 								<li><a href="">Redmi充电宝<span>约剩余2件</span></a></li>
 								<li><a href="">小米真无线蓝牙耳机 Air2<span>约剩余6件</span></a></li>
@@ -129,12 +129,20 @@
 				var $input = $("#n_s_input input");
 				var $n_s_hide = $("#n_s_input .n_s_hide")
 				$input.focus(function(){
+					// addClass 向search中添加一个类 focus
 					$search.addClass("focus");
+					$n_s_hide.addClass("focus")
+					// show方法如果元素被隐藏则显示该元素
 					$n_s_hide.show();
-				}).blur(function(){
-					$search.removeClass("focus");
-					$n_s_hide.hide();
-				});
+					}).blur(function(){
+						// setTimeout设置函数等待2毫秒运行
+						setTimeout(function(){
+						$search.removeClass("focus");
+						// hide的方法就是改变样式为：display:none
+						$n_s_hide.hide();
+						}, 200);
+						
+					});
 			})();
 		</script> 
 	</body>
